@@ -7,6 +7,11 @@ public class Point {
         this.y = y;
     }
 
+    public Point(Point oldPoint){
+        this.x = oldPoint.x;
+        this.y = oldPoint.y;
+    }
+
     public Point() {
     }
 
