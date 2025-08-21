@@ -10,15 +10,8 @@ public class Segment {
     public Point getPoint1() {
         return new Point(point1);
     }
-    public void setPoint1(Point point1) {
-        this.point1 = new Point(point1);
-    }
-
     public Point getPoint2() {
         return new Point(point2);
-    }
-    public void setPoint2(Point point2) {
-        this.point2 = new Point(point2);
     }
 
     public double length(){
@@ -46,4 +39,36 @@ public class Segment {
                 ", point2 = " + point2 +
                 "}";
     }
+
+    public Segment perpendicular(){
+        double x1 = point1.getX();
+        double y1 = point1.getY();
+        double x2 = point2.getX();
+        double y2 = point2.getY();
+
+        double mx = (x1 + x2) / 2.0;
+        double my = (y1 + y2) / 2.0;
+
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+
+        double length = Math.sqrt(dx * dx + dy * dy);
+
+        if (length == 0) {
+            throw new IllegalStateException("Odcinek ma zerową długość – nie można utworzyć prostopadłego");
+        }
+
+        double px = -dy;
+        double py = dx;
+
+        double scale = (length / 2.0) / Math.sqrt(px * px + py * py);
+        px *= scale;
+        py *= scale;
+
+        Point q1 = new Point(mx + px, my + py);
+        Point q2 = new Point(mx - px, my - py);
+
+        return new Segment(q1, q2);
+    }
+
 }
