@@ -1,22 +1,20 @@
 import java.util.Arrays;
 
-public class Polygon {
+public class Polygon extends Shape {
     private Point[] points;
-    Style style;
-
     public Polygon(Point[] points, Style style) {
-        this.style = style;
+        super(style);
         this.points = new Point[points.length];
         for (int i = 0; i < points.length; i++) {
             this.points[i] = new Point(points[i]);
         }
     }
     public Polygon(Point[] points) {
+        super(new Style("transparent","black", 1));
         this.points = new Point[points.length];
         for (int i = 0; i < points.length; i++) {
             this.points[i] = new Point(points[i]);
         }
-        this.style = new Style("transparent", "black", 1.0);
     }
 
     @Override

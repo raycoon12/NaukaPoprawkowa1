@@ -7,9 +7,14 @@ public class Main {
         Point point3 = new Point(50, 290);
         Point point4 = new Point(200, 200);
 
+        Point[] points = {point1, point3, point2};
 
-        Segment segment = new Segment(point1, point3);
         Style style = new Style("purple", "white", 4);
-        System.out.println(Polygon.square(segment,style).toSvg());
+        Ellipse ellipse = new Ellipse(style, point4, 100, 50);
+        Polygon polygon = new Polygon(points, style);
+        SvgScene svgScene = new SvgScene();
+        svgScene.addShape(ellipse);
+        svgScene.addShape(polygon);
+        System.out.println(svgScene.toSvg());
     }
 }
