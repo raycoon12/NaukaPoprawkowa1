@@ -42,6 +42,7 @@ public class Point {
                 "\" r=\"13\" fill=\"black\" />";
     }
 
+
     public void translate(double dx, double dy){
         x += dx;
         y += dy;

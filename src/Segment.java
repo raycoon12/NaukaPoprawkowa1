@@ -71,4 +71,5 @@ public class Segment {
         return new Segment(q1, q2);
     }
 
+
 }

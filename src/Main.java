@@ -7,6 +7,7 @@ public class Main {
         Point point3 = new Point(50, 290);
         Point point4 = new Point(200, 200);
 
+
         Segment segment = new Segment(point1, point3);
         Style style = new Style("purple", "white", 4);
         System.out.println(Polygon.square(segment,style).toSvg());

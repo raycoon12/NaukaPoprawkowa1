@@ -57,6 +57,7 @@ public class Polygon {
         Point p1 = segment.getPoint1();
         Point p2 = segment.getPoint2();
 
+
         double x1 = p1.getX();
         double y1 = p1.getY();
         double x2 = p2.getX();

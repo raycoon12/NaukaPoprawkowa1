@@ -9,6 +9,7 @@ public class Style {
         this.strokeWidth = strokeWidth;
     }
 
+
     public String toSvg(){
         return "fill:" + fillColor + ";stroke:" + strokeColor + ";stroke-width:" + strokeWidth +"\"";
     }
